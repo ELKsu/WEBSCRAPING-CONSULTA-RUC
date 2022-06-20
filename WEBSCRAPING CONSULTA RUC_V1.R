@@ -37,10 +37,9 @@ tabla_trabajadores_final = data.frame()
 tabla_establecimientos_final = data.frame()
 tabla_representantes_final = data.frame()
 
-ruc = c('20263322496','10081666607','10800002104','20100055237')
-#ruc = read.csv("D:/4. WEBSCRAPING/R/SUNAT/sunat_2019_rucs.csv", sep="")
-#ruc$ruc = as.character(ruc$ruc)
-#ruc = as.matrix(ruc)
+ruc = read.csv("D:/4. WEBSCRAPING/R/SUNAT/rucs.csv", sep="")
+ruc$ruc = as.character(ruc$ruc)
+ruc = as.matrix(ruc)
 
 for (num in 1:length(ruc)) {
 
@@ -244,7 +243,3 @@ write.csv(tabla_empresas_final,"D:\\4. WEBSCRAPING\\R\\SUNAT\\BD_empresas.csv", 
 write.csv(tabla_trabajadores_final,"D:\\4. WEBSCRAPING\\R\\SUNAT\\BD_trabajadores.csv", row.names = FALSE)
 write.csv(tabla_establecimientos_final,"D:\\4. WEBSCRAPING\\R\\SUNAT\\BD_sedes.csv", row.names = FALSE)
 write.csv(tabla_representantes_final,"D:\\4. WEBSCRAPING\\R\\SUNAT\\BD_representantes.csv", row.names = FALSE)
-
-remDr$close()
-pJS$stop()
-
